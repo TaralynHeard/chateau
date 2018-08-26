@@ -1,0 +1,76 @@
+.about {
+  &__header {
+    background-image: url(../img/aboutheader.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 95vh;
+    width: 100vw;
+  }
+  &__container {
+    width: 50%;
+    float: right;
+    margin-top: 15rem;
+    margin-right: 5rem;
+    text-align: center;
+    background-color: rgba($primary, 0.7);
+    border-radius: 4px;
+  }
+
+  &__heading {
+    line-height: 7rem !important;
+    font-size: 8rem;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    letter-spacing: 0.7rem;
+    color: $white;
+    padding-top: 2.5rem;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    font-family: "Open Sans Condensed", sans-serif;
+    color: $white;
+    line-height: 3rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.about__icons__grid {
+  display: grid;
+  grid-template-areas: "utensils globe pagelines";
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 4rem auto;
+}
+
+.about__icons {
+  font-size: 2rem;
+  color: $white;
+}
+
+.fas,
+.fab {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.fa-utensils {
+  grid-area: utensils;
+  grid-column-start: 1;
+}
+.fa-globe {
+  grid-area: globe;
+  grid-column-start: 2;
+}
+.fa-pagelines {
+  grid-area: pagelines;
+  grid-column-start: 3;
+}
+
+.icons__text {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.5rem;
+  color: $white;
+  margin-top: 1.5rem;
+}
