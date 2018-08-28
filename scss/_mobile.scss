@@ -1,0 +1,406 @@
+/*MEDIA QUERY MANAGER*/
+/*
+0-600px:         Phone
+600-900px       Tablet portrait
+900-1200px      Tablet landscape
+[1200-1800]     Normal Styles
+1800px + :      Big Desktop
+ 
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+
+  @if $breakpoint == big-desktop {
+    @media (min-width: 112.5em) {
+      @content;
+    } //1800px
+  }
+}
+
+///////Mobile Overrides///////
+
+////Portrait tablet override desktop styles/////
+@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) and (max-device-width: 1024px) {
+  .header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url(../img/header-tablet2.jpg) !important;
+
+    background-position: bottom !important;
+    height: 68vh !important;
+  }
+
+  .header__nav {
+    margin: 7.5rem 1rem 0 0 !important;
+  }
+
+  .header__nav__container {
+    height: 12vh !important;
+  }
+
+  .header__nav--right {
+    margin-left: 2rem !important;
+  }
+
+  .heading-primary {
+    width: 80% !important;
+    margin: 11rem auto 0 auto !important;
+    line-height: 9rem !important;
+  }
+
+  /////Interior/////
+  .interior__img--2 {
+    margin-top: 1rem !important;
+  }
+
+  .interior__img {
+    height: 50% !important;
+  }
+
+  .interior__img--2 {
+    height: 100% !important;
+  }
+
+  .interior__right--2 {
+    margin-top: 4rem !important;
+    margin-left: 3rem !important;
+  }
+
+  .interior__left {
+    margin-left: 4rem !important;
+    margin-top: 2rem !important;
+  }
+
+  ////About////
+  .about__container {
+    width: 65% !important;
+    margin-top: 30rem !important;
+  }
+
+  .about__header {
+    height: 85vh !important;
+  }
+
+  ////Menu////
+
+  .menu__grid {
+    height: 80vh !important;
+  }
+
+  .menu__grid--left {
+    margin-top: 10rem !important;
+    height: 31vh !important;
+  }
+
+  .menu__grid--right {
+    height: 37vh !important;
+  }
+
+  .menu__grid--left2 {
+    height: 38vh !important;
+    margin-left: 2rem !important;
+  }
+
+  .menu__grid--right2 {
+    height: 38vh !important;
+  }
+
+  ////Reservation////
+
+  .reservation__header {
+    height: 65vh !important;
+  }
+
+  ////Contact////
+
+  .contact__grid {
+    height: 21vh !important;
+  }
+
+  .contact__header {
+    height: 83vh !important;
+  }
+
+  ////Footer////
+
+  .footer__navigation {
+    padding-left: 7rem !important;
+  }
+
+  .footer {
+    padding: 2rem 0 3rem 0 !important;
+  }
+}
+
+////Landscape tablet override desktop styles/////
+@media only screen and (orientation: landscape) and (min-width: 901px) and (max-width: 1200px) and (max-device-width: 1200px) {
+  .heading-primary {
+    margin: 17rem auto 0 auto !important;
+    width: 60% !important;
+  }
+
+  .menu__grid--left {
+    margin-top: 20rem !important;
+  }
+
+  .interior__img--2 {
+    margin-top: 11rem !important;
+  }
+}
+
+////Hi dpi desktop styles/////
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1401px) and (min-device-width: 1401px) {
+  .menu__grid--left {
+    margin-top: 11rem !important;
+  }
+
+  .menu__grid--right2 {
+    width: 95% !important;
+    margin-left: 7rem !important;
+  }
+}
+
+////low dpi desktop styles/////
+@media only screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 1280px) and (min-device-width: 1280px) and (max-width: 1400px) and (max-device-width: 1400px) {
+  .menu__grid--left {
+    margin-top: 17rem !important;
+  }
+
+  .menu__grid--right2 {
+    width: 95% !important;
+  }
+}
+
+//Landscape phone styles
+@media only screen and (orientation: landscape) and (min-width: 300px) and (max-width: 825px) and (max-device-width: 825px) {
+  //Global
+  html {
+    -webkit-text-size-adjust: none !important; /* none for no scaling */
+  }
+
+  .header__nav--right {
+    margin: 1rem 0rem 0 2rem !important;
+  }
+
+  .header__nav--left {
+    margin: 5rem 1rem 0 0 !important;
+  }
+  .header__logo {
+    line-height: 0.5 !important;
+    margin: 0 !important;
+    font-size: 6rem !important;
+  }
+
+  .header__nav__container {
+    height: 24vh !important;
+  }
+
+  .heading-primary {
+    margin: 4rem auto 0 auto !important;
+    width: 70% !important;
+  }
+
+  .heading-primary--main {
+    font-size: 6.5rem !important;
+  }
+
+  .heading-primary--text {
+    font-size: 2rem !important;
+    margin: 1rem 0 4rem 0 !important;
+  }
+
+  .header {
+    height: 100vh !important;
+  }
+
+  .btn {
+    padding: 1rem 3rem !important;
+  }
+
+  //////About/////
+  .about__container {
+    margin-top: 2rem !important;
+    margin-right: 10.5rem !important;
+  }
+
+  .about__header {
+    height: 100vh !important;
+  }
+
+  .about__text {
+    width: 80% !important;
+    margin: 2rem auto 0 auto !important;
+  }
+
+  /////Menu/////
+  .menu__grid--left2 {
+    height: 92vh !important;
+    margin-left: 2rem !important;
+  }
+
+  .menu__grid--right {
+    height: 93vh !important;
+  }
+
+  .menu__grid--left {
+    margin-top: 7rem !important;
+  }
+
+  .menu__heading--sub {
+    width: 80% !important;
+    margin: 1.5rem auto 0 auto !important;
+  }
+
+  //////Reservation////
+
+  .reservation__header {
+    height: 150vh !important;
+  }
+
+  .reservation__heading {
+    padding-top: 0.5rem !important;
+  }
+
+  .reservation__container {
+    margin: 4rem auto !important;
+  }
+
+  /////contact////
+
+  .contact__header {
+    height: 185vh !important;
+  }
+
+  .contact__heading {
+    margin-top: 4rem !important;
+  }
+
+  .contact__heading--sub {
+    margin-top: 1.5rem !important;
+  }
+
+  .contact__container {
+    margin: 3rem auto !important;
+  }
+
+  .contact__grid {
+    height: 45vh !important;
+  }
+}
+
+@media only screen and (orientation: portrait) and (min-width: 300px) and (max-width: 700px) and (max-device-width: 700px) {
+  .interior__grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr 1fr 1fr 1fr !important;
+    width: 95% !important;
+    margin: 3rem auto !important;
+  }
+
+  .interior__left {
+    grid-column-start: 1 !important;
+    grid-row-start: 1 !important;
+    text-align: center !important;
+    margin-top: 3rem !important;
+  }
+
+  .interior__left--2 {
+    grid-column-start: 1 !important;
+    grid-row-start: 4 !important;
+    grid-row-end: 4 !important;
+  }
+
+  .interior__heading {
+    margin: 2rem auto !important;
+    width: 28rem !important;
+  }
+
+  .interior__text {
+    width: 100% !important;
+  }
+
+  .interior__right {
+    grid-column-start: 1 !important;
+    grid-row-start: 2 !important;
+    grid-row-end: 2 !important;
+  }
+
+  .interior__img {
+    height: 100% !important;
+    width: 100% !important;
+    margin: 1rem 0 4rem 0 !important;
+  }
+
+  .interior__img--2 {
+    height: 90% !important;
+    width: 100% !important;
+    margin: -1rem 0 0 0 !important;
+    float: none !important;
+  }
+
+  .interior__right--2 {
+    grid-row-start: 3 !important;
+    grid-column-start: 1 !important;
+    margin: 4rem 0 0 0 !important;
+    text-align: center !important;
+  }
+}
+////////////////
+
+@media only screen and (min-width: 440px) and (max-width: 600px) {
+  .interior__right--2 {
+    margin: 2rem 0 0 0 !important;
+  }
+
+  .interior__grid {
+    height: 160vh !important;
+  }
+  /////
+
+  .menu__grid--left {
+    margin-top: 10.5rem !important;
+  }
+
+  .menu__grid--right2 {
+    margin-top: 2rem !important;
+  }
+}
+/////Minor desktop fixes/////
+@media only screen and (min-width: 1200px) and (max-width: 1250px) {
+  .interior__img--2 {
+    height: 77% !important;
+    margin-top: 4rem !important;
+  }
+
+  .interior__img {
+    height: 77% !important;
+  }
+
+  .interior__right--2 {
+    margin-top: -5rem !important;
+  }
+
+  .interior__left {
+    margin-top: 4rem !important;
+  }
+}

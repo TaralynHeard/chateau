@@ -1,0 +1,196 @@
+.menu {
+  // background-color: $white;
+  background-color: $black;
+  text-align: center;
+
+  &__heading {
+    font-size: 8rem;
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    line-height: 7rem !important;
+    color: $primary;
+    padding-top: 4.5rem;
+    // border-bottom: $primary 2px solid;
+    display: inline-block;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+
+    &--sub {
+      font-size: 1.8rem;
+      font-family: "Open Sans Condensed", sans-serif;
+      letter-spacing: 0.1rem;
+      font-weight: 100;
+      // color: $black;
+      color: $white;
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0 5rem;
+    width: 80%;
+    margin: 0 auto;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
+
+    @include respond(tab-port) {
+      width: 95%;
+      padding: 0rem;
+    }
+
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    &--left {
+      grid-column-start: 2;
+      margin-top: 10rem;
+
+      @include respond(tab-land) {
+        // margin-left: 2rem;
+        margin-top: 17rem;
+      }
+
+      @include respond(tab-port) {
+        margin-left: 3rem;
+        margin-top: 18rem;
+      }
+
+      @include respond(phone) {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        margin-top: 4.5rem;
+      }
+    }
+
+    .menu__item__container {
+      text-align: left;
+      width: 80%;
+
+      @include respond(tab-land) {
+        width: 91%;
+      }
+
+      @include respond(tab-port) {
+        width: 95%;
+      }
+    }
+
+    .text-right {
+      @include respond(tab-port) {
+        text-align: right;
+      }
+    }
+
+    .menu__item {
+      font-size: 2.5rem;
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      letter-spacing: 0.2rem;
+      // color: $black;
+      color: $white;
+
+      @include respond(tab-port) {
+        line-height: 2.5rem;
+        font-size: 2.3rem;
+      }
+
+      span {
+        float: right;
+
+        @include respond(tab-port) {
+          display: none;
+        }
+      }
+    }
+
+    .menu__descrip {
+      font-size: 1.7rem;
+      font-weight: 100;
+      font-family: "Open Sans Condensed", sans-serif;
+      // letter-spacing: 0.2rem;
+      line-height: 2.5rem;
+      // color: $black;
+      color: $white;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+
+      @include respond(tab-port) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &--right {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      background-image: url(../img/restaurant-slide1.jpg);
+      width: 93%;
+      background-size: cover;
+      background-position: right;
+      height: 65vh;
+      border-radius: 4px;
+      margin-right: 3rem;
+
+      @include respond(tab-port) {
+        margin-right: 0rem;
+        width: 100%;
+      }
+      @include respond(phone) {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        height: 55vh;
+      }
+    }
+
+    &--left2 {
+      grid-column-start: 2;
+      background-image: url(../img/restaurant-slide2.jpg);
+      width: 93%;
+      background-size: cover;
+      background-position: left;
+      height: 70vh;
+      border-radius: 4px;
+
+      @include respond(tab-land) {
+        width: 100%;
+      }
+
+      @include respond(tab-port) {
+        width: 97%;
+        margin-left: 1rem;
+      }
+
+      @include respond(phone) {
+        grid-column-start: 1;
+        grid-row-start: 3;
+        height: 55vh;
+      }
+    }
+
+    &--right2 {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      margin-left: 4rem;
+
+      @include respond(tab-land) {
+        margin-top: 3rem;
+      }
+
+      @include respond(tab-port) {
+        margin-left: 2rem;
+        margin-top: 2rem;
+      }
+      @include respond(phone) {
+        grid-column-start: 1;
+        grid-row-start: 4;
+        margin-top: -1rem;
+      }
+    }
+  }
+}

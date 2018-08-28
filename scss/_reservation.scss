@@ -1,0 +1,207 @@
+.reservation {
+  &__header {
+    background-image: linear-gradient(rgba($black, 0.8), rgba($black, 0.8)),
+      url(../img/interior/samuel-foster-412328-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+
+    @include respond(tab-land) {
+      height: 90vh;
+    }
+  }
+
+  &__container {
+    width: 70%;
+    margin: 7rem auto;
+    text-align: center;
+
+    @include respond(tab-port) {
+      width: 90%;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+      margin: 4rem auto;
+    }
+  }
+
+  &__heading {
+    font-size: 8rem;
+    font-weight: 400;
+    font-family: "Great Vibes", cursive;
+    line-height: 7rem !important;
+    color: $primary;
+    padding-top: 4.5rem;
+    display: inline-block;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+
+    @include respond(phone) {
+      padding-top: 2.5rem;
+    }
+
+    &--sub {
+      font-size: 1.8rem;
+      font-family: "Open Sans Condensed", sans-serif;
+      letter-spacing: 0.1rem;
+      font-weight: 100;
+      // color: $black;
+      color: $white;
+      margin-top: 1.5rem;
+    }
+  }
+}
+//////Form/////
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    font-size: 1.8rem;
+    font-family: "Open Sans Condensed", sans-serif;
+    letter-spacing: 0.1rem;
+    color: $white;
+    padding: 1.5rem 2rem;
+    background-color: transparent;
+    border: 1px solid $white;
+    width: 90%;
+    display: block;
+    transition: all 0.3s;
+    margin: 0 auto;
+
+    // @include respond(tab-port) {
+    //   width: 100%;
+    // }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($black, 0.1);
+      border-bottom: 3px solid $primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid red;
+    }
+
+    &::-webkit-input-placeholder {
+      color: rgba($white, 0.7);
+    }
+  }
+  &__input--half {
+    font-size: 1.8rem;
+    font-family: "Open Sans Condensed", sans-serif;
+    letter-spacing: 0.1rem;
+    color: $white;
+    padding: 1.5rem 2rem;
+    background-color: transparent;
+    border: 1px solid $white;
+    display: inline;
+    transition: all 0.3s;
+    margin-right: 1.5rem;
+    width: 44.1%;
+
+    // @include respond(tab-port) {
+    //   width: 100%;
+    // }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($black, 0.1);
+      border-bottom: 3px solid $primary;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid red;
+    }
+
+    &::-webkit-input-placeholder {
+      color: rgba($white, 0.7);
+    }
+  }
+
+  &__input--half2 {
+    margin: 0;
+  }
+
+  &__label {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__radio-group {
+    width: 20%;
+    display: inline-block;
+
+    @include respond(tab-port) {
+      width: 25%;
+    }
+
+    @include respond(phone) {
+      width: 35%;
+    }
+  }
+
+  &__radio-input {
+    display: none;
+  }
+
+  &__radio-label {
+    color: $white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    padding-left: 4.5rem;
+  }
+
+  &__radio-button {
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid $primary;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+
+    &::after {
+      content: "";
+      height: 1.3rem;
+      width: 1.3rem;
+      border-radius: 50%;
+      background-color: $primary;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+  }
+
+  &__radio-input:checked ~ &__radio-label &__radio-button::after {
+    opacity: 1;
+  }
+
+  &__btn {
+    margin: 4rem 0;
+    //   display: inline-block;
+  }
+}
+
+#email {
+  @include respond(phone) {
+    width: 92%;
+  }
+}
