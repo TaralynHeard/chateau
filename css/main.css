@@ -239,7 +239,11 @@ $breakpoint arguement choices:
   background-attachment: fixed;
   background-position: center;
   height: 95vh;
-  width: 100vw; }
+  width: 100vw; 
+}
+@media (max-width: 37.5em) {
+    .about__header {
+      background-attachment: scroll; } 
 
 .about__container {
   width: 55%;
@@ -392,7 +396,8 @@ $breakpoint arguement choices:
       height: 115vh; } }
   @media (max-width: 37.5em) {
     .contact__header {
-      height: 170vh; } }
+      height: 170vh;
+   background-attachment: scroll;} }
 
 .contact__container {
   width: 70%;
@@ -1155,7 +1160,12 @@ $breakpoint arguement choices:
   text-align: center; }
   @media (max-width: 75em) {
     .reservation__header {
-      height: 90vh; } }
+      height: 90vh; } 
+   
+    @media (max-width: 37.5em) {
+    .reservation__header {
+      background-attachment: scroll; } 
+}
 
 .reservation__container {
   width: 70%;
