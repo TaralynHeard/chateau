@@ -244,7 +244,7 @@ $breakpoint arguement choices:
 @media (max-width: 37.5em) {
     .about__header {
       background-attachment: scroll; } 
-
+}
 .about__container {
   width: 55%;
   float: right;
@@ -1161,7 +1161,7 @@ $breakpoint arguement choices:
   @media (max-width: 75em) {
     .reservation__header {
       height: 90vh; } 
-   
+} 
     @media (max-width: 37.5em) {
     .reservation__header {
       background-attachment: scroll; } 
